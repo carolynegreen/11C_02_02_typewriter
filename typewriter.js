@@ -16,10 +16,12 @@ function init() {
 function loop() {
   console.log("loop", iterator);
   iterator++;
-  while (iterator < maxNumber) {
-    setTimeout(loop, 400);
+
+  if (iterator < maxNumber) {
+    setTimeout(loop, 200);
   }
+
   output = typerwriter.substring(iterator, 0);
   console.log(output);
-  document.querySelector("#typewriter").textContent = output;
+  document.querySelector(".typewritten").textContent = output;
 }
